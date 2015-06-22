@@ -7,7 +7,7 @@ class ContactsController<ApplicationController
     @contact=Contact.new(contact_params)
     
     if @contact.save
-      name = params[:contact] [:name]
+      name = params[:contact] [:name] #part of hash syntax
       email = params[:contact][:email]
       body = params[:contact][:comments]
       
