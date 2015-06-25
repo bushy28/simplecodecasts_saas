@@ -12,25 +12,25 @@ $(document).ready(function() {
     
     if (!error) {
       // Get the stripe token
-      Stripe.createToken ({
+       Stripe.createToken({
         number: ccNum, 
         cvc: ccNum, 
         exp_month: expMonth, 
-        exp_year: expYear, 
-        }, stripeResponseHandler);
+        exp_year: expYear
+      }, stripeResponseHandler);
     }
     return false;
 }); // form submission
   
   function stripeResponseHandler(status, response) {
-    // Get a regerence to the form:
+    // Get a reference to the form:
     var f = $("#new_user");
     
     // Get the token from the response:
     var token = response.id;
     
     //Add the token to the form
-    f.append('<input type="hidden" name="user[stripe_card_token]" value="' + token + '"/>');
+    f.append('<input type="hidden" name="user[stripe_card_token]" value="' + token + '" />');
     
     //Submit the form:
     f.get(0).submit();
