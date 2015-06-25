@@ -14,7 +14,7 @@ $(document).ready(function() {
       // Get the stripe token
        Stripe.createToken({
         number: ccNum, 
-        cvc: ccNum, 
+        cvc: cvcNum, 
         exp_month: expMonth, 
         exp_year: expYear
       }, stripeResponseHandler);
